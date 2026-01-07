@@ -1,4 +1,4 @@
-// File: C:\Users\ardic\OneDrive\Masaüstü\Code\AI\csgotrayTekrar\app\page.tsx
+// File: C:\Users\OnurA\OneDrive\Masaüstü\Projects\CsGoBanAppV1.1\app\page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

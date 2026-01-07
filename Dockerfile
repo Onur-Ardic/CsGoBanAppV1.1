@@ -1,5 +1,5 @@
 # Build stage
-FROM node:18-alpine AS builder
+FROM node:18 AS builder
 
 WORKDIR /app
 
@@ -7,13 +7,13 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm install
+RUN npm install --legacy-peer-deps && npm cache clean --force
 
 # Copy project files
 COPY . .
 
-# Build Next.js app
-RUN npm run build
+# Build Next.js app with increased memory
+RUN NODE_OPTIONS=--max_old_space_size=4096 npm run build
 
 # Production stage
 FROM node:18-alpine AS runner
